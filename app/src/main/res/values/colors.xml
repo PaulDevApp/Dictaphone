@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDay">#9761Af</color>
+    <color name="colorPrimaryNight">#C1AADB</color>
+    <color name="colorPrimaryDarkDay">#F2F2F1</color>
+    <color name="colorPrimaryDarkNight">#362E3A</color>
+    <color name="colorBackgroundDay">#F2F2F1</color>
+    <color name="colorBackgroundNight">#362E3A</color>
+    <color name="colorSurfaceDay">#E6E6E6</color>
+    <color name="colorSurfaceNight">#413945</color>
+    <color name="colorAccent">#D87978</color>
+
+    <item name="one" type="color">#74BEC1</item>
+    <item name="two" type="color">#ADEBBE</item>
+    <item name="three" type="color">#EEF3AD</item>
+    <item name="four" type="color">#FED4D4</item>
+    <item name="five" type="color">#DDB6C6</item>
+    <item name="six" type="color">#FED1B5</item>
+    <item name="seven" type="color">#F0B7A4</item>
+    <item name="eight" type="color">#FFD2A5</item>
+    <item name="nine" type="color">#EA9085</item>
+    <item name="ten" type="color">#E9E2D0</item>
+
+    <integer-array name="card_colors">
+        <item>@color/one</item>
+        <item>@color/two</item>
+        <item>@color/three</item>
+        <item>@color/four</item>
+        <item>@color/five</item>
+        <item>@color/six</item>
+        <item>@color/seven</item>
+        <item>@color/eight</item>
+        <item>@color/nine</item>
+        <item>@color/ten</item>
+    </integer-array>
+
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+
+    <style name="Theme.Dictaphone" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimaryNight</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkNight</item>
+        <item name="android:windowBackground">@color/colorBackgroundNight</item>
+        <item name="colorSurface">@color/colorSurfaceNight</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="android:navigationBarColor">@color/colorSurfaceNight</item>
+    </style>
+
+</resources>
