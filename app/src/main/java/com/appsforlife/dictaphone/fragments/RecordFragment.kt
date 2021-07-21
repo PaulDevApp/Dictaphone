@@ -54,11 +54,12 @@ class RecordFragment : Fragment() {
 
         if (!mainActivity.isServiceRunning()) {
             viewModel.resetTimer()
+            binding.lottieRecording.cancelAnimation()
         } else {
-            binding.fabPlay.setImageResource(R.drawable.ic_voice_over_off)
+            binding.lottieRecording.playAnimation()
         }
 
-        binding.fabPlay.setOnClickListener {
+        binding.lottieRecording.setOnClickListener {
             if (ContextCompat.checkSelfPermission(
                     requireContext(),
                     android.Manifest.permission.RECORD_AUDIO
@@ -87,7 +88,7 @@ class RecordFragment : Fragment() {
         val intent = Intent(activity, RecordService::class.java)
 
         if (start) {
-            binding.fabPlay.setImageResource(R.drawable.ic_record_voice)
+            binding.lottieRecording.playAnimation()
             activity?.let { Utilities.getToast(it, R.string.toast_recording_start) }
 
             val folder =
@@ -99,7 +100,7 @@ class RecordFragment : Fragment() {
             activity?.startService(intent)
             activity?.window?.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         } else {
-            binding.fabPlay.setImageResource(R.drawable.ic_voice_over_off)
+            binding.lottieRecording.cancelAnimation()
 
             activity?.stopService(intent)
             activity?.window?.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
@@ -139,6 +140,15 @@ class RecordFragment : Fragment() {
                 NotificationManager::class.java
             )
             notificationManager.createNotificationChannel(notificationChannel)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (!mainActivity.isServiceRunning()) {
+            binding.lottieRecording.cancelAnimation()
+        } else {
+            binding.lottieRecording.playAnimation()
         }
     }
 }

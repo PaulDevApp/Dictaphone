@@ -1,11 +1,12 @@
 package com.appsforlife.dictaphone.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.appsforlife.dictaphone.R
 import com.appsforlife.dictaphone.adapters.RecordAdapter
@@ -37,7 +38,11 @@ class ListRecordFragment : Fragment() {
 
         val adapter =
             RecordAdapter()
+        binding.rvList.setHasFixedSize(true)
         binding.rvList.adapter = adapter
+
+        val animation = AnimationUtils.loadLayoutAnimation(context, R.anim.fall_down_layout)
+        binding.rvList.layoutAnimation = animation
 
         listRecordViewModel.records.observe(viewLifecycleOwner, {
             it?.let {

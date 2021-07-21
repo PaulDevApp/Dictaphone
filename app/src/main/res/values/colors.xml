@@ -9,6 +9,8 @@
     <color name="colorSurfaceDay">#E6E6E6</color>
     <color name="colorSurfaceNight">#413945</color>
     <color name="colorAccent">#D87978</color>
+    <color name="colorText">#212121</color>
+    <color name="colorMic">#424242</color>
 
     <item name="one" type="color">#74BEC1</item>
     <item name="two" type="color">#ADEBBE</item>

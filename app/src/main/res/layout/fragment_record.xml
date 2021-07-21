@@ -17,18 +17,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_play"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_voice_over_off"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,11 +24,23 @@
             android:fontFamily="@font/timer"
             android:text="@{recordViewModel.elapsedTime}"
             android:textSize="45sp"
-            app:layout_constraintBottom_toTopOf="@+id/fab_play"
+            app:layout_constraintBottom_toTopOf="@+id/lottie_recording"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="00:00:00" />
 
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_recording"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/mic"
+            tools:src="@drawable/ic_mic" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
