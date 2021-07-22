@@ -2,8 +2,8 @@ package com.appsforlife.dictaphone
 
 import android.app.ActivityManager
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.appsforlife.dictaphone.databinding.ActivityMainBinding
@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment
         val navController = navHostFragment.navController
         NavigationUI.setupWithNavController(binding.bottomNav, navController)
+
     }
 
     fun isServiceRunning(): Boolean {
@@ -33,4 +34,5 @@ class MainActivity : AppCompatActivity() {
         }
         return false
     }
+
 }

@@ -1,28 +1,28 @@
 package com.appsforlife.dictaphone.fragments
 
+import android.Manifest
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import androidx.core.content.ContextCompat
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.appsforlife.dictaphone.MainActivity
 import com.appsforlife.dictaphone.R
-import com.appsforlife.dictaphone.viewModels.RecordViewModel
 import com.appsforlife.dictaphone.database.RecordDAO
 import com.appsforlife.dictaphone.database.RecordDB
 import com.appsforlife.dictaphone.databinding.FragmentRecordBinding
 import com.appsforlife.dictaphone.service.RecordService
 import com.appsforlife.dictaphone.support.Constants
 import com.appsforlife.dictaphone.support.Utilities
+import com.appsforlife.dictaphone.viewModels.RecordViewModel
 import java.io.File
 
 
@@ -32,7 +32,21 @@ class RecordFragment : Fragment() {
     private lateinit var mainActivity: MainActivity
     private var recordDAO: RecordDAO? = null
     private lateinit var binding: FragmentRecordBinding
-    private val PERMISSION_RECORD_AUDIO = 123
+
+    private val requestPermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) {
+            if (it) {
+                if (mainActivity.isServiceRunning()) {
+                    onRecord(false)
+                    viewModel.stopTimer()
+                } else {
+                    onRecord(true)
+                    viewModel.startTimer()
+                }
+            } else {
+                Utilities.getToast(mainActivity, R.string.toast_recording_permissions)
+            }
+        }
 
 
     override fun onCreateView(
@@ -59,25 +73,7 @@ class RecordFragment : Fragment() {
             binding.lottieRecording.playAnimation()
         }
 
-        binding.lottieRecording.setOnClickListener {
-            if (ContextCompat.checkSelfPermission(
-                    requireContext(),
-                    android.Manifest.permission.RECORD_AUDIO
-                ) != PackageManager.PERMISSION_GRANTED
-            ) {
-                requestPermissions(
-                    arrayOf(android.Manifest.permission.RECORD_AUDIO), PERMISSION_RECORD_AUDIO
-                )
-            } else {
-                if (mainActivity.isServiceRunning()) {
-                    onRecord(false)
-                    viewModel.stopTimer()
-                } else {
-                    onRecord(true)
-                    viewModel.startTimer()
-                }
-            }
-        }
+        binding.lottieRecording.setOnClickListener { requestPermission() }
 
         createChannel()
 
@@ -107,24 +103,6 @@ class RecordFragment : Fragment() {
         }
     }
 
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
-    ) {
-        when (requestCode) {
-            PERMISSION_RECORD_AUDIO -> {
-                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    onRecord(true)
-                    viewModel.startTimer()
-                } else {
-                    activity?.let { Utilities.getToast(it, R.string.toast_recording_permissions) }
-                }
-                return
-            }
-        }
-    }
-
     private fun createChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val notificationChannel = NotificationChannel(
@@ -150,5 +128,9 @@ class RecordFragment : Fragment() {
         } else {
             binding.lottieRecording.playAnimation()
         }
+    }
+
+    private fun requestPermission() {
+        requestPermissionLauncher.launch(Manifest.permission.RECORD_AUDIO)
     }
 }

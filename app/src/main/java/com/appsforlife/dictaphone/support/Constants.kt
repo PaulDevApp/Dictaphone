@@ -7,7 +7,9 @@ object Constants {
     const val CHANNEL_NAME = "channel_name"
     const val TRIGGER_TIME = "trigger_at"
     const val ARG_RECORD_PATH = "record_path"
+    const val ARG_RECORD_ID = "record_id"
     const val APP_NAME = "dictaphone"
+    const val UNKNOWN_VIEW_MODEL_CLASS = "unknown ViewModel class"
     const val FORMAT_MP3 = ".mp3"
     const val FORMAT_MP4 = ".mp4"
     const val BITRATE_192 = 192000

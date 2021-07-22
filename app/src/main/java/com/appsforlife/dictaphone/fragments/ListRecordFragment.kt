@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -12,8 +11,8 @@ import com.appsforlife.dictaphone.R
 import com.appsforlife.dictaphone.adapters.RecordAdapter
 import com.appsforlife.dictaphone.database.RecordDB
 import com.appsforlife.dictaphone.databinding.FragmentListRecordBinding
-import com.appsforlife.dictaphone.viewModels.ListViewModel
 import com.appsforlife.dictaphone.viewModelFactory.ListViewModelFactory
+import com.appsforlife.dictaphone.viewModels.ListViewModel
 
 class ListRecordFragment : Fragment() {
 
@@ -40,14 +39,15 @@ class ListRecordFragment : Fragment() {
         binding.rvList.setHasFixedSize(true)
         binding.rvList.adapter = adapter
 
-        val animation = AnimationUtils.loadLayoutAnimation(context, R.anim.fall_down_layout)
-        binding.rvList.layoutAnimation = animation
 
         listRecordViewModel.records.observe(viewLifecycleOwner, {
             it?.let {
                 adapter.data = it
             }
         })
+
+//        val animation = AnimationUtils.loadLayoutAnimation(context, R.anim.fall_down_layout)
+//        binding.rvList.layoutAnimation = animation
 
         binding.lifecycleOwner = this
 
