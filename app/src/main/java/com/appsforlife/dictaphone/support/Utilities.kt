@@ -13,7 +13,7 @@ object Utilities {
 
     fun getDate(): String? {
         return SimpleDateFormat(
-            "dd.MM.yyyy",
+            "dd.MM.yyyy HH:mm",
             Locale.getDefault()
         ).format(Date())
     }

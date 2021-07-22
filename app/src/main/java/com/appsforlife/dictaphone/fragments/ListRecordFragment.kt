@@ -13,7 +13,7 @@ import com.appsforlife.dictaphone.adapters.RecordAdapter
 import com.appsforlife.dictaphone.database.RecordDB
 import com.appsforlife.dictaphone.databinding.FragmentListRecordBinding
 import com.appsforlife.dictaphone.viewModels.ListViewModel
-import com.appsforlife.dictaphone.viewModels.ListViewModelFactory
+import com.appsforlife.dictaphone.viewModelFactory.ListViewModelFactory
 
 class ListRecordFragment : Fragment() {
 
@@ -36,8 +36,7 @@ class ListRecordFragment : Fragment() {
 
         binding.listRecordViewModel = listRecordViewModel
 
-        val adapter =
-            RecordAdapter()
+        val adapter = RecordAdapter()
         binding.rvList.setHasFixedSize(true)
         binding.rvList.adapter = adapter
 

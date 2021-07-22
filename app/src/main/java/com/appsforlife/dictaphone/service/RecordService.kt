@@ -61,7 +61,7 @@ class RecordService : Service() {
         mediaRecorder?.setOutputFile(filePath)
         mediaRecorder?.setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
         mediaRecorder?.setAudioChannels(1)
-        mediaRecorder?.setAudioEncodingBitRate(192000)
+        mediaRecorder?.setAudioEncodingBitRate(Constants.BITRATE_256)
 
         try {
             mediaRecorder?.prepare()
@@ -103,7 +103,7 @@ class RecordService : Service() {
 
         do {
             fileName = (getString(R.string.default_file_name)
-                    + "_" + dateTime + count + ".mp4")
+                    + "_" + dateTime + count + Constants.FORMAT_MP3)
             filePath = application.getExternalFilesDir(null)?.absolutePath
             filePath += "/$fileName"
 
