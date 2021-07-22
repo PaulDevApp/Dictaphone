@@ -57,15 +57,26 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_file_name"
                 tools:text="00:00" />
 
+            <ImageView
+                android:id="@+id/iv_popup_menu"
+                android:layout_width="30dp"
+                android:layout_height="0dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:contentDescription="@string/app_name"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_popup_menu"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="2dp"
                 android:textColor="@color/colorText"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/iv_popup_menu"
                 app:layout_constraintHorizontal_bias="1"
                 app:layout_constraintStart_toStartOf="@+id/iv_mic"
                 tools:text="09.09.1988" />

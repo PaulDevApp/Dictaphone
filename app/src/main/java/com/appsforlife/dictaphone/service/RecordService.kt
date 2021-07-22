@@ -99,7 +99,7 @@ class RecordService : Service() {
     private fun setFileNameAndPath() {
         var count = 0
         var f: File
-        val dateTime = SimpleDateFormat("yyyy_MM_dd_HH_mm_ss").format(System.currentTimeMillis())
+        val dateTime = SimpleDateFormat("MM_dd_HH_mm_ss").format(System.currentTimeMillis())
 
         do {
             fileName = (getString(R.string.default_file_name)

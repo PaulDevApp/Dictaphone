@@ -15,5 +15,7 @@ object Constants {
     const val BITRATE_192 = 192000
     const val BITRATE_256 = 256000
     const val BITRATE_320 = 320000
+    const val MENU_DELETE = 1
+    const val MENU_SHARE = 2
 
 }
