@@ -67,7 +67,8 @@
                 android:src="@drawable/ic_popup_menu"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/colorMic" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_date"

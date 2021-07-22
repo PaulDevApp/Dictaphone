@@ -32,9 +32,9 @@ class RemoveViewModel(
         }
     }
 
-    fun removeFile(filePath:String){
+    fun removeFile(filePath: String) {
         val file = File(filePath)
-        if (file.exists()){
+        if (file.exists()) {
             file.delete()
             Utilities.getToast(application, R.string.file_deleted_text)
         }

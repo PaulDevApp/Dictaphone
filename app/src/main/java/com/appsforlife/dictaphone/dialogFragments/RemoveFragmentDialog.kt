@@ -45,7 +45,7 @@ class RemoveFragmentDialog : DialogFragment() {
         return AlertDialog.Builder(activity)
             .setTitle(R.string.dialog_title_delete)
             .setMessage(R.string.dialog_text_delete)
-            .setPositiveButton(R.string.dialog_action_yes) { dialog, _ ->
+            .setPositiveButton(R.string.dialog_action_yes) { dialog, which ->
                 try {
                     itemId?.let { removeViewModel.removeRecord(it) }
                     itemPath?.let { removeViewModel.removeFile(it) }

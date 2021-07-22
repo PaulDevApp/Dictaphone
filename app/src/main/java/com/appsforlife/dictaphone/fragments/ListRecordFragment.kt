@@ -58,7 +58,12 @@ class ListRecordFragment : Fragment(), RecordItemClickListener, PopupMenuClickLi
 
         listRecordViewModel.records.observe(viewLifecycleOwner, {
             it?.let {
-                adapter.data = it
+                if (it.size == 0) {
+                    binding.lottieEmpty.visibility = View.VISIBLE
+                } else {
+                    binding.lottieEmpty.visibility = View.GONE
+                    adapter.data = it
+                }
             }
         })
 

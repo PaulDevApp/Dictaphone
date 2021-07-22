@@ -22,4 +22,5 @@
     <string name="file_not_found">File not found</string>
     <string name="delete">Delete</string>
     <string name="share">Share</string>
+    <string name="delete_audio_recording_permanently">Delete audio recording permanently?</string>
 </resources>
