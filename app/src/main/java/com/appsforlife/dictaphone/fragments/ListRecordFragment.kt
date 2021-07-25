@@ -3,6 +3,7 @@ package com.appsforlife.dictaphone.fragments
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
@@ -15,22 +16,30 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
+import com.appsforlife.dictaphone.MainActivity
 import com.appsforlife.dictaphone.R
 import com.appsforlife.dictaphone.adapters.RecordAdapter
 import com.appsforlife.dictaphone.database.RecordDB
 import com.appsforlife.dictaphone.databinding.FragmentListRecordBinding
-import com.appsforlife.dictaphone.dialogFragments.RemoveFragmentDialog
+import com.appsforlife.dictaphone.dialogFragments.DeleteDialog
+import com.appsforlife.dictaphone.listeners.DialogDeleteListener
 import com.appsforlife.dictaphone.listeners.PopupMenuClickListener
 import com.appsforlife.dictaphone.listeners.RecordItemClickListener
 import com.appsforlife.dictaphone.model.Record
 import com.appsforlife.dictaphone.support.Constants.MENU_DELETE
 import com.appsforlife.dictaphone.support.Constants.MENU_SHARE
 import com.appsforlife.dictaphone.viewModelFactory.ListViewModelFactory
+import com.appsforlife.dictaphone.viewModelFactory.RemoveViewModelFactory
 import com.appsforlife.dictaphone.viewModels.ListViewModel
+import com.appsforlife.dictaphone.viewModels.RemoveViewModel
 import java.io.File
 
 
-class ListRecordFragment : Fragment(), RecordItemClickListener, PopupMenuClickListener {
+class ListRecordFragment : Fragment(), RecordItemClickListener, PopupMenuClickListener,
+    DialogDeleteListener {
+
+    private lateinit var deleteDialog: DeleteDialog
+    private lateinit var removeViewModel: RemoveViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,6 +55,12 @@ class ListRecordFragment : Fragment(), RecordItemClickListener, PopupMenuClickLi
         val dataSource = RecordDB.getInstance(application).recordDAO
         val viewModelFactory = ListViewModelFactory(dataSource)
 
+        val recordDAO = RecordDB.getInstance(application).recordDAO
+        val removeViewModelFactory = RemoveViewModelFactory(recordDAO, application)
+        removeViewModel =
+            ViewModelProvider(this, removeViewModelFactory).get(RemoveViewModel::class.java)
+        deleteDialog = DeleteDialog(this.activity as MainActivity, this)
+
         val listRecordViewModel =
             ViewModelProvider(this, viewModelFactory).get(ListViewModel::class.java)
 
@@ -60,8 +75,10 @@ class ListRecordFragment : Fragment(), RecordItemClickListener, PopupMenuClickLi
             it?.let {
                 if (it.size == 0) {
                     binding.lottieEmpty.visibility = View.VISIBLE
+                    binding.rvList.visibility = View.GONE
                 } else {
                     binding.lottieEmpty.visibility = View.GONE
+                    binding.rvList.visibility = View.VISIBLE
                     adapter.data = it
                 }
             }
@@ -93,7 +110,7 @@ class ListRecordFragment : Fragment(), RecordItemClickListener, PopupMenuClickLi
                     shareAudio(record)
                 }
                 MENU_DELETE -> {
-                    removeRecordDialog(record)
+                    deleteDialog.createDeleteRecordDialog(record)
                 }
             }
             return@setOnMenuItemClickListener true
@@ -102,19 +119,6 @@ class ListRecordFragment : Fragment(), RecordItemClickListener, PopupMenuClickLi
         popupMenu.show()
     }
 
-    private fun removeRecordDialog(record: Record) {
-        val removeFragmentDialog: RemoveFragmentDialog =
-            RemoveFragmentDialog()
-                .newInstance(
-                    record.id,
-                    record.filePath
-                )
-        val transaction: FragmentTransaction =
-            (context as FragmentActivity)
-                .supportFragmentManager
-                .beginTransaction()
-        removeFragmentDialog.show(transaction, "dialog_remove")
-    }
 
     private fun shareAudio(record: Record) {
         val uri = FileProvider.getUriForFile(
@@ -137,4 +141,14 @@ class ListRecordFragment : Fragment(), RecordItemClickListener, PopupMenuClickLi
     override fun onMenuClick(view: View, record: Record) {
         showPopupMenu(view, record)
     }
+
+    override fun onDeleteClickListener(record: Record) {
+        try {
+            record.id.let { removeViewModel.removeRecord(it) }
+            record.filePath.let { removeViewModel.removeFile(it) }
+        } catch (e: java.lang.Exception) {
+            Log.e("deleteFileDialog", "exception", e)
+        }
+    }
+
 }

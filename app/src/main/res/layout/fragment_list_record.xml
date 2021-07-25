@@ -23,6 +23,8 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone"
+            tools:visibility="visible"
             app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/item_record" />
 

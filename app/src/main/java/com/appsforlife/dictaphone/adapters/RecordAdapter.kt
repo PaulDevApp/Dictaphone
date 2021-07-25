@@ -47,8 +47,10 @@ class RecordAdapter(
 
         with(holder.binding) {
             tvFileName.text = record.name
-            tvFileLength.text = String.format("%02d:%02d", minutes, seconds)
+            tvLength.text = String.format("%02d:%02d", minutes, seconds)
             tvDate.text = record.date
+            tvFileSize.text = record.fileSize
+            tvBitrate.text = record.bitrate
 
             val cardColors: IntArray =
                 context.resources.getIntArray(R.array.card_colors)

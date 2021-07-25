@@ -123,9 +123,11 @@ class RecordService : Service() {
 
         record.name = fileName.toString()
         record.filePath = filePath.toString()
+        record.fileSize = getSize(filePath.toString())
         record.length = elapsedMillis
         record.time = System.currentTimeMillis()
         record.date = Utilities.getDate().toString()
+        record.bitrate = Constants.BITRATE_256.toString().dropLast(3) + " kbps"
 
 
         mediaRecorder = null
@@ -147,6 +149,13 @@ class RecordService : Service() {
         }
 
         super.onDestroy()
+    }
+
+    @SuppressLint("DefaultLocale")
+    private fun getSize(filePath: String): String {
+        val file = File(filePath)
+        val fileSizeInKB = file.length().toDouble() / 1024
+        return java.lang.String.format("%.2f" + " KB", fileSizeInKB)
     }
 
 }

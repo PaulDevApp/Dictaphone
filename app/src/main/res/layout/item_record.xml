@@ -31,31 +31,57 @@
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_file_name"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
+                android:ellipsize="end"
+                android:singleLine="true"
                 android:textColor="@color/colorText"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@id/iv_popup_menu"
                 app:layout_constraintStart_toEndOf="@+id/iv_mic"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="file_name" />
+                app:layout_constraintTop_toTopOf="@+id/iv_mic"
+                tools:text="@tools:sample/avatars" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_file_length"
+                android:id="@+id/tv_length"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
                 android:fontFamily="@font/timer"
                 android:textColor="@color/colorText"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0"
-                app:layout_constraintStart_toEndOf="@+id/iv_mic"
-                app:layout_constraintTop_toBottomOf="@+id/tv_file_name"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/iv_mic"
+                app:layout_constraintTop_toBottomOf="@id/tv_file_name"
                 tools:text="00:00" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_file_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/colorText"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_mic"
+                app:layout_constraintStart_toEndOf="@id/iv_mic"
+                app:layout_constraintTop_toBottomOf="@+id/tv_length"
+                tools:ignore="SmallSp"
+                tools:text="2041.16 KB" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_bitrate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:textColor="@color/colorText"
+                android:textSize="11sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/tv_file_size"
+                app:layout_constraintStart_toEndOf="@id/tv_file_size"
+                tools:ignore="SmallSp"
+                tools:text="256 kbps" />
+
 
             <ImageView
                 android:id="@+id/iv_popup_menu"
@@ -76,10 +102,8 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorText"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBaseline_toBaselineOf="@id/tv_file_size"
                 app:layout_constraintEnd_toStartOf="@+id/iv_popup_menu"
-                app:layout_constraintHorizontal_bias="1"
-                app:layout_constraintStart_toStartOf="@+id/iv_mic"
                 tools:text="09.09.1988" />
 
 

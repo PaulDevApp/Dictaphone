@@ -17,5 +17,9 @@ data class Record(
     @ColumnInfo(name = "time")
     var time: Long = 0L,
     @ColumnInfo(name = "date")
-    var date: String = ""
+    var date: String = "",
+    @ColumnInfo(name = "fileSize")
+    var fileSize: String = "",
+    @ColumnInfo(name = "bitrate")
+    var bitrate: String = ""
 )
