@@ -4,12 +4,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import androidx.recyclerview.widget.DiffUtil.calculateDiff
 import androidx.recyclerview.widget.RecyclerView
 import com.appsforlife.dictaphone.R
 import com.appsforlife.dictaphone.databinding.ItemRecordBinding
 import com.appsforlife.dictaphone.listeners.PopupMenuClickListener
 import com.appsforlife.dictaphone.listeners.RecordItemClickListener
 import com.appsforlife.dictaphone.model.Record
+import com.appsforlife.dictaphone.support.DiffUtil
 import com.appsforlife.dictaphone.support.Utilities
 import java.io.File
 import java.util.*
@@ -23,13 +25,15 @@ class RecordAdapter(
 
     private var lastPosition = -1
 
-    var data = listOf<Record>()
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
+    private var oldRecordList = emptyList<Record>()
 
-    override fun getItemCount() = data.size
+//    var data = listOf<Record>()
+//        set(value) {
+//            field = value
+//            notifyDataSetChanged()
+//        }
+
+    override fun getItemCount() = oldRecordList.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -39,7 +43,7 @@ class RecordAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val context: Context = holder.itemView.context
-        val record: Record = data[position]
+        val record: Record = oldRecordList[position]
         val itemDuration: Long = record.length
         val minutes = TimeUnit.MILLISECONDS.toMinutes(itemDuration)
         val seconds =
@@ -81,6 +85,13 @@ class RecordAdapter(
             }
 
         }
+    }
+
+    fun setData(newRecordList: List<Record>) {
+        val diffUtil = DiffUtil(oldRecordList, newRecordList)
+        val diffUtilResult = calculateDiff(diffUtil)
+        oldRecordList = newRecordList
+        diffUtilResult.dispatchUpdatesTo(this)
     }
 
     class ViewHolder(internal val binding: ItemRecordBinding) :

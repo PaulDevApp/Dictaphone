@@ -79,7 +79,7 @@ class ListRecordFragment : Fragment(), RecordItemClickListener, PopupMenuClickLi
                 } else {
                     binding.lottieEmpty.visibility = View.GONE
                     binding.rvList.visibility = View.VISIBLE
-                    adapter.data = it
+                    adapter.setData(it)
                 }
             }
         })
