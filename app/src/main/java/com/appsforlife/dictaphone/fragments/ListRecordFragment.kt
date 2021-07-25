@@ -21,7 +21,7 @@ import com.appsforlife.dictaphone.R
 import com.appsforlife.dictaphone.adapters.RecordAdapter
 import com.appsforlife.dictaphone.database.RecordDB
 import com.appsforlife.dictaphone.databinding.FragmentListRecordBinding
-import com.appsforlife.dictaphone.dialogFragments.DeleteDialog
+import com.appsforlife.dictaphone.dialogs.DeleteDialog
 import com.appsforlife.dictaphone.listeners.DialogDeleteListener
 import com.appsforlife.dictaphone.listeners.PopupMenuClickListener
 import com.appsforlife.dictaphone.listeners.RecordItemClickListener

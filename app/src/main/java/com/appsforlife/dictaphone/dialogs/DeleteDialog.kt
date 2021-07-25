@@ -1,4 +1,4 @@
-package com.appsforlife.dictaphone.dialogFragments
+package com.appsforlife.dictaphone.dialogs
 
 import android.app.Activity
 import android.graphics.drawable.ColorDrawable
