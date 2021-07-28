@@ -1,5 +1,6 @@
 package com.appsforlife.dictaphone.adapters
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -27,12 +28,6 @@ class RecordAdapter(
 
     private var oldRecordList = emptyList<Record>()
 
-//    var data = listOf<Record>()
-//        set(value) {
-//            field = value
-//            notifyDataSetChanged()
-//        }
-
     override fun getItemCount() = oldRecordList.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -41,7 +36,7 @@ class RecordAdapter(
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, @SuppressLint("RecyclerView") position: Int) {
         val context: Context = holder.itemView.context
         val record: Record = oldRecordList[position]
         val itemDuration: Long = record.length

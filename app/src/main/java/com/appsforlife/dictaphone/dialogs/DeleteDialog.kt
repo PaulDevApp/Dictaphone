@@ -4,7 +4,7 @@ import android.app.Activity
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.View
-import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AlertDialog.Builder
 import com.appsforlife.dictaphone.R
 import com.appsforlife.dictaphone.listeners.DialogDeleteListener
 import com.appsforlife.dictaphone.model.Record
@@ -15,7 +15,7 @@ class DeleteDialog(
 ) {
 
     fun createDeleteRecordDialog(record: Record) {
-        val builder = AlertDialog.Builder(
+        val builder = Builder(
             activity
         )
         val view: View =

@@ -3,24 +3,42 @@
     <string name="recording">Recording</string>
     <string name="list_of_records">List of records</string>
 
-    <string name="default_file_name">Запись</string>
-    <string name="toast_recording_finish">Запись сохранена</string>
-    <string name="notification_recording">Идет запись…</string>
-    <string name="toast_recording_start">Запись началась</string>
-    <string name="file_is_not_exist_text">Аудиофайл не найден</string>
-    <string name="file_deleted_text">Аудиофайл успешно удален</string>
-    <string name="dialog_title_delete">Подтвердите удаление</string>
-    <string name="dialog_text_delete">Удалить эту запись?</string>
-    <string name="dialog_action_yes">Да</string>
-    <string name="dialog_action_no">Нет</string>
-    <string name="toast_recording_permissions">Без разрешения запись невозможна</string>
-
-    <string name="notification_channel_id" translatable="false">RecordService</string>
-    <string name="notification_channel_name" translatable="true">Recorder</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_file_name">Recording</string>
+    <string name="toast_recording_finish">Record saved</string>
+    <string name="notification_recording">Recording in progress …</string>
+    <string name="toast_recording_start">Recording has begun</string>
+    <string name="file_is_not_exist_text">Audio file not found</string>
+    <string name="file_deleted_text">Audio file deleted successfully</string>
+    <string name="dialog_title_delete">Confirm deletion</string>
+    <string name="dialog_text_delete">Delete this entry?</string>
+    <string name="dialog_action_yes">Yes</string>
+    <string name="toast_recording_permissions">Recording is not possible without permission</string>
     <string name="file_not_found">File not found</string>
     <string name="delete">Delete</string>
     <string name="share">Share</string>
     <string name="delete_audio_recording_permanently">Delete audio recording permanently?</string>
+    <string name="settings">Settings</string>
+    <string name="set_bitrate">Set bitrate</string>
+    <string name="_320">320</string>
+    <string name="_256">256</string>
+    <string name="_192">192</string>
+    <string name="set_audio_file_format">Set audio file format</string>
+    <string name="mp3">mp3</string>
+    <string name="mp4">mp4</string>
+    <string name="aac">aac</string>
+    <string name="rate_app">Rate app</string>
+    <string name="open_source">Open source</string>
+    <string name="other_applications">Other applications</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="auto">auto</string>
+    <string name="night">night</string>
+    <string name="day">day</string>
+    <string name="set_theme">Set theme</string>
+    <string name="resources_used">Resources used:</string>
+    <string name="lottie">Lottie</string>
+    <string name="flaticon">Flacticon</string>
+    <string name="icon_icons">Icon-icons</string>
+    <string name="android_asset_studio">Android Asset Studio</string>
+    <string name="to_open_with">To open with</string>
+    <string name="no_suitable_applications_to_open_the_file">No suitable applications to open the file!</string>
 </resources>

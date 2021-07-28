@@ -14,8 +14,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.appsforlife.dictaphone.MainActivity
 import com.appsforlife.dictaphone.R
+import com.appsforlife.dictaphone.activities.MainActivity
 import com.appsforlife.dictaphone.database.RecordDAO
 import com.appsforlife.dictaphone.database.RecordDB
 import com.appsforlife.dictaphone.databinding.FragmentRecordBinding

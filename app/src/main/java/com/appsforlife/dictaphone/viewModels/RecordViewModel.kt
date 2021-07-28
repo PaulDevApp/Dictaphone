@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.concurrent.TimeUnit
 
-class RecordViewModel(private val app: Application) : AndroidViewModel(app) {
+class RecordViewModel(app: Application) : AndroidViewModel(app) {
 
     private val second: Long = 1_000L
 

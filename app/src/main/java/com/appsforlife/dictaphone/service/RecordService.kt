@@ -9,8 +9,9 @@ import android.media.MediaRecorder
 import android.os.IBinder
 import android.util.Log
 import androidx.core.app.NotificationCompat
-import com.appsforlife.dictaphone.MainActivity
+import com.appsforlife.dictaphone.AppSettings
 import com.appsforlife.dictaphone.R
+import com.appsforlife.dictaphone.activities.MainActivity
 import com.appsforlife.dictaphone.database.RecordDAO
 import com.appsforlife.dictaphone.database.RecordDB
 import com.appsforlife.dictaphone.model.Record
@@ -61,7 +62,7 @@ class RecordService : Service() {
         mediaRecorder?.setOutputFile(filePath)
         mediaRecorder?.setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
         mediaRecorder?.setAudioChannels(1)
-        mediaRecorder?.setAudioEncodingBitRate(Constants.BITRATE_256)
+        AppSettings.getInstance()?.getBitrate()?.let { mediaRecorder?.setAudioEncodingBitRate(it) }
 
         try {
             mediaRecorder?.prepare()
@@ -99,11 +100,11 @@ class RecordService : Service() {
     private fun setFileNameAndPath() {
         var count = 0
         var f: File
-        val dateTime = SimpleDateFormat("MM_dd_HH_mm_ss").format(System.currentTimeMillis())
+        val dateTime = SimpleDateFormat("mm_dd_hh_mm_ss").format(System.currentTimeMillis())
 
         do {
             fileName = (getString(R.string.default_file_name)
-                    + "_" + dateTime + count + Constants.FORMAT_MP3)
+                    + "_" + dateTime + count + AppSettings.getInstance()?.getFormat())
             filePath = application.getExternalFilesDir(null)?.absolutePath
             filePath += "/$fileName"
 
@@ -127,7 +128,7 @@ class RecordService : Service() {
         record.length = elapsedMillis
         record.time = System.currentTimeMillis()
         record.date = Utilities.getDate().toString()
-        record.bitrate = Constants.BITRATE_256.toString().dropLast(3) + " kbps"
+        record.bitrate = AppSettings.getInstance()?.getBitrate().toString().dropLast(3) + " kbps"
 
 
         mediaRecorder = null
