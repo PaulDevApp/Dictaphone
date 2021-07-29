@@ -27,5 +27,11 @@ implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'com.google.android.exoplayer:exoplayer-core:2.14.2'  
     implementation 'com.google.android.exoplayer:exoplayer-ui:2.14.2'  
     implementation 'com.google.android.exoplayer:exoplayer:2
+#### Screen list
+![Alt-текст](https://user-images.githubusercontent.com/62378496/127443897-27aa5713-7a06-4ffd-9e42-f6f0e96c405e.jpg)
+![Alt-текст](https://user-images.githubusercontent.com/62378496/127443903-93ad572c-6c51-4a25-b60d-a05c437a9c74.jpg)
+![Alt-текст](https://user-images.githubusercontent.com/62378496/127443904-223b381b-5abe-427f-8249-50a3492a5114.jpg)
+![Alt-текст](https://user-images.githubusercontent.com/62378496/127443905-4f051296-95dd-433f-a981-da4ef4868341.jpg)
+![Alt-текст](https://user-images.githubusercontent.com/62378496/127443908-62b9cc63-f0e1-4887-a683-0e8e427d4e9a.jpg)
 
 
