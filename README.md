@@ -1,6 +1,11 @@
 # Dictaphone
 Recording, storing and playing sounds
-## Dependency
+## Key features:
+_material design_    
+_intuitive interface_  
+_the ability to share recordings_  
+_setting the bit rate and recording format_    
+### Dependency
 implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"  
     implementation 'androidx.core:core-ktx:1.6.0'  
     implementation 'androidx.appcompat:appcompat:1.3.1'  
@@ -21,4 +26,6 @@ implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'com.airbnb.android:lottie:3.7.2'  
     implementation 'com.google.android.exoplayer:exoplayer-core:2.14.2'  
     implementation 'com.google.android.exoplayer:exoplayer-ui:2.14.2'  
-    implementation 'com.google.android.exoplayer:exoplayer:2.14.2'  
+    implementation 'com.google.android.exoplayer:exoplayer:2
+
+
