@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Dictaphone</string>
+
+    <string name="recording">Запись</string>
+    <string name="list_of_records">Список записей</string>
+    <string name="default_file_name">Запись</string>
+    <string name="toast_recording_finish">Запись сохранена</string>
+    <string name="notification_recording">Идет запись…</string>
+    <string name="toast_recording_start">Запись началась</string>
+    <string name="file_is_not_exist_text">Аудио файл не найден</string>
+    <string name="file_deleted_text">Аудиофайл успешно удален</string>
+    <string name="dialog_title_delete">Подтвердить удаление</string>
+    <string name="dialog_text_delete">Удалить эту запись?</string>
+    <string name="dialog_action_yes">Да</string>
+    <string name="toast_recording_permissions">Запись невозможна без разрешения</string>
+    <string name="file_not_found">Файл не найден</string>
+    <string name="delete">Удалить</string>
+    <string name="share">Поделиться</string>
+    <string name="delete_audio_recording_permanently">Удалить аудиозапись навсегда?</string>
+    <string name="settings">Настройки</string>
+    <string name="set_bitrate">Битрейт</string>
+    <string name="_320">320</string>
+    <string name="_256">256</string>
+    <string name="_192">192</string>
+    <string name="set_audio_file_format">Формат</string>
+    <string name="mp3">mp3</string>
+    <string name="mp4">mp4</string>
+    <string name="aac">aac</string>
+    <string name="rate_app">Оценить приложение</string>
+    <string name="open_source">Открытый исходный код</string>
+    <string name="other_applications">Другие приложения</string>
+    <string name="privacy_policy">Политика конфиденциальности</string>
+    <string name="auto">авто</string>
+    <string name="night">ночь</string>
+    <string name="day">день</string>
+    <string name="set_theme">Тема</string>
+    <string name="resources_used">Используемые ресурсы:</string>
+    <string name="lottie">Lottie</string>
+    <string name="flaticon">Flaticon</string>
+    <string name="icon_icons">Icon-icons</string>
+    <string name="android_asset_studio">Android Asset Studio</string>
+    <string name="to_open_with">Открыть с помощью</string>
+    <string name="no_suitable_applications_to_open_the_file">Нет подходящих приложений для открытия файла!</string>
+</resources>

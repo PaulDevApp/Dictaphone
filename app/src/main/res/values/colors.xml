@@ -2,9 +2,9 @@
 <resources>
     <color name="colorPrimaryDay">#9761Af</color>
     <color name="colorPrimaryNight">#C1AADB</color>
-    <color name="colorPrimaryDarkDay">#F2F2F1</color>
+    <color name="colorPrimaryDarkDay">#E2E1E4</color>
     <color name="colorPrimaryDarkNight">#362E3A</color>
-    <color name="colorBackgroundDay">#F2F2F1</color>
+    <color name="colorBackgroundDay">#E2E1E4</color>
     <color name="colorBackgroundNight">#362E3A</color>
     <color name="colorSurfaceDay">#E6E6E6</color>
     <color name="colorSurfaceNight">#413945</color>
