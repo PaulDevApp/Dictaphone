@@ -10,9 +10,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.appsforlife.dictaphone.R
 import com.appsforlife.dictaphone.databinding.FragmentPlayerBinding
-import com.appsforlife.dictaphone.viewModels.PlayerViewModel
 import com.appsforlife.dictaphone.support.Constants
 import com.appsforlife.dictaphone.viewModelFactory.PlayerViewModelFactory
+import com.appsforlife.dictaphone.viewModels.PlayerViewModel
 
 class PlayerFragment : DialogFragment() {
 
@@ -48,7 +48,12 @@ class PlayerFragment : DialogFragment() {
         val application = requireNotNull(this.activity).application
         val viewModelFactory = recordPath?.let { PlayerViewModelFactory(it, application) }
 
-        viewModel = ViewModelProvider(this, viewModelFactory!!).get(PlayerViewModel::class.java)
+        viewModel = viewModelFactory?.let {
+            ViewModelProvider(
+                this,
+                it
+            ).get(PlayerViewModel::class.java)
+        }!!
 
         viewModel.itemPath = recordPath
         viewModel.player.observe(viewLifecycleOwner, Observer {

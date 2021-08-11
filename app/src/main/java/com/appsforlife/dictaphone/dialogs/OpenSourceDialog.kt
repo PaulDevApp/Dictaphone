@@ -39,14 +39,14 @@ class OpenSourceDialog(
             )
         }
 
-        view.findViewById<View>(R.id.tv_flaticon).setOnClickListener { v: View? ->
+        view.findViewById<View>(R.id.tv_flaticon).setOnClickListener {
             activity.startActivity(
                 Intent(Intent.ACTION_VIEW, Uri.parse("https://www.flaticon.com/"))
             )
         }
 
 
-        view.findViewById<View>(R.id.tv_lottie).setOnClickListener { v: View? ->
+        view.findViewById<View>(R.id.tv_lottie).setOnClickListener {
             activity.startActivity(
                 Intent(Intent.ACTION_VIEW, Uri.parse("https://lottiefiles.com/"))
             )

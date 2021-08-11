@@ -25,11 +25,10 @@ class SettingsActivity : AppCompatActivity() {
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolBar_settings)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.toolBarSettings)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        toolbar.setNavigationOnClickListener {
+        binding.toolBarSettings.setNavigationOnClickListener {
             onBackPressed()
         }
 
