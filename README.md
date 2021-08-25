@@ -27,7 +27,9 @@ implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'com.google.android.exoplayer:exoplayer-core:2.14.2'  
     implementation 'com.google.android.exoplayer:exoplayer-ui:2.14.2'  
     implementation 'com.google.android.exoplayer:exoplayer:2
-#### Screen list
+#### Download the app
+https://play.google.com/store/apps/details?id=com.appsforlife.dictaphone&hl=ru&gl=US
+##### Screen list
 ![Alt-текст](https://user-images.githubusercontent.com/62378496/127443897-27aa5713-7a06-4ffd-9e42-f6f0e96c405e.jpg)
 ![Alt-текст](https://user-images.githubusercontent.com/62378496/127445508-ae2e3f97-10ce-43fa-8600-c712c9d4ae95.jpg)
 ![Alt-текст](https://user-images.githubusercontent.com/62378496/127443904-223b381b-5abe-427f-8249-50a3492a5114.jpg)
