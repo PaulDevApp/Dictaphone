@@ -1,5 +1,11 @@
 <resources>
 
+    <style name="Theme.MySplash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/colorPrimaryDarkNight</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="postSplashScreenTheme">@style/Theme.Dictaphone</item>
+    </style>
+
     <style name="Theme.Dictaphone" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/colorPrimaryNight</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkNight</item>

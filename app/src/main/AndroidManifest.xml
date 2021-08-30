@@ -14,7 +14,7 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Dictaphone"
+        android:theme="@style/Theme.MySplash"
         tools:ignore="AllowBackup,Instantiatable">
         <activity
             android:name=".activities.SettingsActivity"

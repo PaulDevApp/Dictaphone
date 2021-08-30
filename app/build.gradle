@@ -11,8 +11,8 @@ android {
         applicationId "com.appsforlife.dictaphone"
         minSdkVersion 23
         targetSdkVersion 31
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -56,7 +56,8 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1-native-mt'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1-native-mt'
     implementation 'com.airbnb.android:lottie:3.7.2'
-    implementation 'com.google.android.exoplayer:exoplayer-core:2.14.2'
-    implementation 'com.google.android.exoplayer:exoplayer-ui:2.14.2'
-    implementation 'com.google.android.exoplayer:exoplayer:2.14.2'
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.15.0'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.15.0'
+    implementation 'com.google.android.exoplayer:exoplayer:2.15.0'
+    implementation "androidx.core:core-splashscreen:1.0.0-alpha01"
 }

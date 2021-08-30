@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.DiffUtil.calculateDiff
 import androidx.recyclerview.widget.RecyclerView
 import com.appsforlife.dictaphone.R
@@ -23,8 +22,6 @@ class RecordAdapter(
     private val recordItemClickListener: RecordItemClickListener,
     private val popupMenuClickListener: PopupMenuClickListener
 ) : RecyclerView.Adapter<RecordAdapter.ViewHolder>() {
-
-    private var lastPosition = -1
 
     private var oldRecordList = emptyList<Record>()
 
@@ -72,11 +69,6 @@ class RecordAdapter(
 
             ivPopupMenu.setOnClickListener {
                 popupMenuClickListener.onMenuClick(ivPopupMenu, record)
-            }
-
-            if (position > lastPosition) {
-                cardView.animation = AnimationUtils.loadAnimation(context, R.anim.fall_down_item)
-                lastPosition = position
             }
 
         }

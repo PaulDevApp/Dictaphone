@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.appsforlife.dictaphone.AppSettings
 import com.appsforlife.dictaphone.R
 import com.appsforlife.dictaphone.databinding.ActivitySettingsBinding
@@ -19,6 +20,8 @@ class SettingsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        installSplashScreen()
 
         Utilities.setTheme()
 

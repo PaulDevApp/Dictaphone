@@ -10,6 +10,8 @@ import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import android.view.animation.LayoutAnimationController
 import androidx.appcompat.widget.CustomPopupMenu
 import androidx.core.app.ShareCompat
 import androidx.core.content.FileProvider
@@ -45,6 +47,7 @@ class ListRecordFragment : Fragment(), RecordItemClickListener, PopupMenuClickLi
     private lateinit var deleteDialog: DeleteDialog
     private lateinit var removeViewModel: RemoveViewModel
     private lateinit var mainActivity: MainActivity
+    private lateinit var animation: LayoutAnimationController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -73,6 +76,11 @@ class ListRecordFragment : Fragment(), RecordItemClickListener, PopupMenuClickLi
 
         binding.listRecordViewModel = listRecordViewModel
 
+        animation = AnimationUtils.loadLayoutAnimation(
+            context,
+            R.anim.fall_down_layout
+        )
+
         val adapter = RecordAdapter(this, this)
         binding.rvList.setHasFixedSize(true)
         binding.rvList.adapter = adapter
@@ -86,6 +94,11 @@ class ListRecordFragment : Fragment(), RecordItemClickListener, PopupMenuClickLi
                     binding.lottieEmpty.visibility = View.GONE
                     binding.rvList.visibility = View.VISIBLE
                     adapter.setData(it)
+                    if (flag == 1) {
+                        binding.rvList
+                            .layoutAnimation = animation
+                        flag = 2
+                    }
                 }
             }
         })
@@ -173,6 +186,10 @@ class ListRecordFragment : Fragment(), RecordItemClickListener, PopupMenuClickLi
         } catch (e: java.lang.Exception) {
             Log.e("deleteFileDialog", "exception", e)
         }
+    }
+
+    companion object {
+        private var flag = 1
     }
 
 }
