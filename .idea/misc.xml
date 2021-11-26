@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/YandexDisk/Projects_AS/AppsForLife/Dictaphone/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.28615384615384615" />
+        <entry key="..\:/YandexDisk/Projects_AS/AppsForLife/Dictaphone/app/src/main/res/drawable/background_dialog.xml" value="0.290625" />
         <entry key="..\:/YandexDisk/Projects_AS/AppsForLife/Dictaphone/app/src/main/res/drawable/ic_delete.xml" value="0.28615384615384615" />
         <entry key="..\:/YandexDisk/Projects_AS/AppsForLife/Dictaphone/app/src/main/res/drawable/ic_launcher_background.xml" value="0.28615384615384615" />
         <entry key="..\:/YandexDisk/Projects_AS/AppsForLife/Dictaphone/app/src/main/res/layout/activity_main.xml" value="0.25462962962962965" />
@@ -12,6 +13,7 @@
         <entry key="..\:/YandexDisk/Projects_AS/AppsForLife/Dictaphone/app/src/main/res/layout/fragment_player.xml" value="0.25462962962962965" />
         <entry key="..\:/YandexDisk/Projects_AS/AppsForLife/Dictaphone/app/src/main/res/layout/fragment_record.xml" value="0.25462962962962965" />
         <entry key="..\:/YandexDisk/Projects_AS/AppsForLife/Dictaphone/app/src/main/res/layout/item_record.xml" value="0.25555555555555554" />
+        <entry key="..\:/YandexDisk/Projects_AS/AppsForLife/Dictaphone/app/src/main/res/layout/layout_dialog_delet_record.xml" value="0.27447916666666666" />
         <entry key="..\:/YandexDisk/Projects_AS/AppsForLife/Dictaphone/app/src/main/res/layout/layout_dialog_open_source.xml" value="0.264" />
         <entry key="..\:/YandexDisk/Projects_AS/AppsForLife/Dictaphone/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.27447916666666666" />
         <entry key="..\:/YandexDisk/Projects_AS/AppsForLife/Dictaphone/app/src/main/res/menu/menu.xml" value="0.25555555555555554" />

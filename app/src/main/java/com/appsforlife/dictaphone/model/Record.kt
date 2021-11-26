@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "record_table")
 data class Record(
     @PrimaryKey(autoGenerate = true)
-    val id: Long = 0L,
+    var id: Int = 0,
     @ColumnInfo(name = "name")
     var name: String = "",
     @ColumnInfo(name = "filePath")

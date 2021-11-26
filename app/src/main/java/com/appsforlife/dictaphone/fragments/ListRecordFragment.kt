@@ -51,7 +51,7 @@ class ListRecordFragment : Fragment(), RecordItemClickListener, PopupMenuClickLi
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
 
         val binding: FragmentListRecordBinding = DataBindingUtil.inflate(

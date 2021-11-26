@@ -18,7 +18,7 @@ class RemoveViewModel(
     private var job = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + job)
 
-    fun removeRecord(recordId: Long) {
+    fun removeRecord(recordId: Int) {
         recordDAO = RecordDB.getInstance(application).recordDAO
 
         try {

@@ -90,7 +90,7 @@ class RecordService : Service() {
                         applicationContext,
                         MainActivity::class.java
                     )
-                ), 0
+                ), PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
             )
         )
         return mBuilder.build()

@@ -23,7 +23,7 @@ interface RecordDAO {
     fun removeAll()
 
     @Query("DELETE from record_table WHERE id = :key")
-    fun removeRecord(key: Long?)
+    fun removeRecord(key: Int)
 
     @Query("SELECT * from record_table ORDER BY id DESC")
     fun getAllRecords(): LiveData<MutableList<Record>>

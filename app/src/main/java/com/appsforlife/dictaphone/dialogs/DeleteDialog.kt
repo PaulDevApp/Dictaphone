@@ -11,7 +11,7 @@ import com.appsforlife.dictaphone.model.Record
 
 class DeleteDialog(
     private val activity: Activity,
-    private val dialogDeleteListener: DialogDeleteListener
+    private val dialogDeleteListener: DialogDeleteListener,
 ) {
 
     fun createDeleteRecordDialog(record: Record) {
@@ -32,5 +32,4 @@ class DeleteDialog(
 
         dialogDelete.show()
     }
-
 }
